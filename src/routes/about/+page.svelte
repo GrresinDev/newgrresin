@@ -142,9 +142,9 @@
 		content="With a vision rooted in quality and design, Graffiti Resin pioneers artistic and functional resin surfaces across the region."
 	/>
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content={page.url.href} />
-	<meta property="og:image" content={logo} />
-
+	<meta property="og:url" content={localizeHref('about')} />
+	<!--<meta property="og:image" content="" />
+-->
 	<meta
 		name="keywords"
 		content="about Graffiti Resin, Saudi epoxy company, resin floor specialists, cement terrazzo team, resin design experts, resin flooring history"
@@ -153,7 +153,7 @@
 
 <div style="display:none">
 	{#each locales as locale}
-		<a href={localizeHref(page.url.pathname, { locale })}>{locale}</a>
+		<a href={localizeHref('/about', { locale })}>{locale}</a>
 	{/each}
 </div>
 <div id="About Intro" class=" relative z-0 py-16 md:pt-32 md:pb-20">
