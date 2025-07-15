@@ -1,4 +1,5 @@
 {
+	"$schema": "https://inlang.com/schema/inlang-message-format",
 	"muddy_lofty_yak_dart": "من نحن",
 	"early_clean_cod_devour": "تواصل معنا",
 	"deft_cuddly_jaguar_jump": "مدونات",
@@ -31,5 +32,13 @@
 	"slow_sad_cockroach_quiz": "رسالتك",
 	"fancy_topical_halibut_succeed": "رسالة خاطئة",
 	"ornate_heavy_squirrel_achieve": "سوف نتصل بك قريبا!",
-	"shy_grassy_crocodile_honor": "لقد حدث خطأ ما!"
+	"shy_grassy_crocodile_honor": "لقد حدث خطأ ما!",
+	"merry_red_impala_laugh": "المتجر",
+	"pretty_fuzzy_tapir_intend": "المشاريع",
+	"acidic_level_baboon_revive": "نقطة البيع",
+	"novel_topical_niklas_twirl": "منتجات فنية",
+	"cozy_neat_mule_renew": "منتجات",
+	"drab_fair_gazelle_fulfill": "مَلَفّ التعريفي",
+	"swift_tiny_spider_gulp": "اصنع بنفسك",
+	"tangy_top_shrimp_leap": "خدماتنا"
 }

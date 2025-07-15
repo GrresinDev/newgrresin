@@ -1,5 +1,5 @@
 <script lang="ts">
-	//import { m } from '$lib/paraglide/messages';
+	import { m } from '$lib/paraglide/messages';
 	//@lucide/svelte Import and Icons
 	import { type Icon as IconType } from '@lucide/svelte';
 
@@ -43,7 +43,7 @@
 	let items: GridItem[] = [
 		{
 			id: '1',
-			title: 'Shop',
+			title: m.merry_red_impala_laugh(),
 			icon: ShoppingCart,
 			href: 'https://shop.grresin.com/',
 			colSpan: 'col-span-1',
@@ -53,7 +53,7 @@
 		},
 		{
 			id: '2',
-			title: 'Partners',
+			title: m.noisy_witty_goose_favor(),
 			icon: Users,
 			href: localizeHref('#partner'),
 			colSpan: 'col-span-1',
@@ -63,7 +63,7 @@
 		},
 		{
 			id: '3',
-			title: 'Projects',
+			title: m.pretty_fuzzy_tapir_intend(),
 			icon: ClipboardList,
 			href: localizeHref('/projects'),
 			colSpan: 'col-span-1',
@@ -73,7 +73,7 @@
 		},
 		{
 			id: '4',
-			title: 'AboutUs',
+			title: m.muddy_lofty_yak_dart(),
 			icon: Info,
 			href: localizeHref('/about'),
 			colSpan: 'col-span-2',
@@ -84,7 +84,7 @@
 		{
 			// This is the modified item 5
 			id: '5',
-			title: 'Point of Sales', // You might want to adjust this title as it's now one of two.
+			title: m.acidic_level_baboon_revive(),
 			icon: ChartSpline,
 			href: localizeHref('/sales'),
 			colSpan: 'col-span-1', // Changed from 'col-span-2' to 'col-span-1'
@@ -95,7 +95,7 @@
 		{
 			// This is the new item derived from the original item 5
 			id: '10', // New unique ID
-			title: 'Art Products', // A new title for the second cell, or reuse if appropriate
+			title: m.novel_topical_niklas_twirl(), // A new title for the second cell, or reuse if appropriate
 			icon: TrendingUp, // A different icon might be suitable
 			href: localizeHref('#art_products'), // A different href if it leads somewhere else
 			colSpan: 'col-span-1',
@@ -105,7 +105,7 @@
 		},
 		{
 			id: '6',
-			title: 'Products \n',
+			title: m.cozy_neat_mule_renew(),
 			icon: Tag,
 			href: localizeHref('#project_products'),
 			colSpan: 'col-span-1',
@@ -115,7 +115,7 @@
 		},
 		{
 			id: '7',
-			title: 'Portfolio',
+			title: m.drab_fair_gazelle_fulfill(),
 			icon: FileBadge2,
 			href: '/Graffite Profile.pdf',
 			colSpan: 'col-span-1',
@@ -125,7 +125,7 @@
 		},
 		{
 			id: '8',
-			title: 'Blogs',
+			title: m.deft_cuddly_jaguar_jump(),
 			icon: BookOpen,
 			href: localizeHref('/blog'),
 			colSpan: 'col-span-2',
@@ -135,7 +135,7 @@
 		},
 		{
 			id: '9',
-			title: 'Make Your Own',
+			title: m.swift_tiny_spider_gulp(),
 			icon: File,
 			href: localizeHref('/order'),
 			colSpan: 'col-span-2',

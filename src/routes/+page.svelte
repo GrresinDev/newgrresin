@@ -2,22 +2,13 @@
 	//images
 	import art from '$lib/assets/images/Home/art.webp?enhanced';
 	import project from '$lib/assets/images/Home/project.webp?enhanced';
+	import LoadingArtCard from '$lib/components/ArtProducts/loading-art-card.svelte';
+	import Hero from '$lib/components/Hero/Hero.svelte';
+	import LoadingProjectsProducts from '$lib/components/ProjectsProducts/loading-ProjectsProducts.svelte';
 	//Paraglide Imports
 	import { m } from '$lib/paraglide/messages';
 	import { getLocale } from '$lib/paraglide/runtime';
 	import { inview } from 'svelte-inview';
-	import BlureFade from '$lib/components/Animation/BlureFade.svelte';
-	import Hr from '$lib/components/Animation/Hr.svelte';
-	import Hero from '$lib/components/Hero/Hero.svelte';
-	import ArtCard from '$lib/components/ArtProducts/ArtCard.svelte';
-
-	import LoadingArtCard from '$lib/components/ArtProducts/loading -art-card.svelte';
-	import ProjectsProducts from '$lib/components/ProjectsProducts/ProjectsProducts.svelte';
-	import LoadingProjectsProducts from '$lib/components/ProjectsProducts/loading-ProjectsProducts.svelte';
-	import Partners from '$lib/components/Partners/partners.svelte';
-
-	import Faq from '$lib/components/Faq/Faq.svelte';
-	import ContactForm from '$lib/components/Contact/contact-form.svelte';
 
 	let locale = $state(getLocale());
 	let isArabic = $derived(locale == 'ar');
@@ -31,11 +22,13 @@
 <section id="graffiti-resin-services" class=" mt-3 flex w-full flex-col px-0 py-10 md:px-4 lg:px-8">
 	<article class=" w-full px-2 md:min-h-svh md:p-20">
 		<h1 class="  myshadow ml-11 w-fit text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-			Our Services<br />
+			{m.tangy_top_shrimp_leap()}<br />
 			<hr class=" bg-primary my-2 h-1 w-full" />
 		</h1>
-		{#if data.components['Bento']}
+		{#if data.components['Bento'] && data.components['BlureFade']}
 			{@const Bento = data.components['Bento']}
+			{@const BlureFade = data.components['BlureFade']}
+
 			<BlureFade once={true}>
 				<Bento />
 			</BlureFade>
@@ -53,14 +46,18 @@
 			class="  w-fit text-2xl font-semibold tracking-tight break-words text-ellipsis sm:text-3xl lg:text-4xl"
 		>
 			{m.cozy_brave_maggot_ripple()}
-			<Hr
-				id="small"
-				borderColor="border-gray-500"
-				options={{
-					rootMargin: '-10px',
-					unobserveOnEnter: true
-				}}
-			/>
+			{#if data.components['Hr']}
+				{@const Hr = data.components['Hr']}
+
+				<Hr
+					id="small"
+					borderColor="border-gray-500"
+					options={{
+						rootMargin: '-10px',
+						unobserveOnEnter: true
+					}}
+				/>
+			{/if}
 		</h2>
 
 		<p class="text-bold my-8 mr-0 text-justify text-3xl tracking-tighter text-pretty">
@@ -110,9 +107,12 @@
 		</div>
 	{:then art_products}
 		<div class=" custom-scroll flex touch-auto snap-x snap-mandatory flex-nowrap overflow-x-scroll">
-			{#each art_products as product (product.id)}
-				<ArtCard {product} bind:isArabic />
-			{/each}
+			{#if data.components['ArtCard']}
+				{@const ArtCard = data.components['ArtCard']}
+				{#each art_products as product (product.id)}
+					<ArtCard {product} bind:isArabic />
+				{/each}
+			{/if}
 		</div>
 	{:catch err}
 		<p>Refresh The Page To View Our Product</p>
@@ -162,9 +162,13 @@
 		</div>
 	{:then project_products}
 		<div class="grid grid-cols-1 gap-8 text-center sm:p-3 md:grid-cols-2">
-			{#each project_products as project, i (project.id)}
-				<ProjectsProducts {project} bind:isArabic />
-			{/each}
+			{#if data.components['ProjectsProducts']}
+				{@const ProjectsProducts = data.components['ProjectsProducts']}
+
+				{#each project_products as project, i (project.id)}
+					<ProjectsProducts {project} bind:isArabic />
+				{/each}
+			{/if}
 		</div>
 	{/await}
 </section>
@@ -177,8 +181,10 @@
 			<hr class="mr-14 h-2 w-full rounded-sm border-0 bg-blue-400 md:my-10" />
 		</span>
 	</h1>
-
-	<Partners partner={data.partner} />
+	{#if data.components['Partners']}
+		{@const Partners = data.components['Partners']}
+		<Partners partner={data.partner} />
+	{/if}
 </section>
 
 <!--Statics Section-->
@@ -206,7 +212,11 @@
 </section>
 
 <section id="faq" class="my-4">
-	<Faq faq={data.faq} bind:isArabic />
+	{#if data.components['Faq']}
+		{@const Faq = data.components['Faq']}
+
+		<Faq faq={data.faq} bind:isArabic />
+	{/if}
 </section>
 
 <section id="contact" class="my-0">
@@ -226,7 +236,11 @@
 			<p class="mb-8 text-start whitespace-pre-line text-gray-600">
 				{m.round_zany_mule_hack()}
 			</p>
-			<ContactForm />
+			{#if data.components['ContactForm']}
+				{@const ContactForm = data.components['ContactForm']}
+
+				<ContactForm />
+			{/if}
 		</div>
 	</div>
 </section>
