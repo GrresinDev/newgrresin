@@ -1,22 +1,22 @@
 <script lang="ts">
 	import { Button } from '$lib/components/ui/button/index.js';
-	import logo from '$lib/assets/images/Logo.png';
-	import { getLocale } from '$lib/paraglide/runtime';
-	import {
-		Building,
-		Factory,
-		Lock,
-		Mail,
-		Milestone,
-		Rocket,
-		ShieldPlus,
-		TestTubeDiagonal,
-		Trophy
-	} from '@lucide/svelte';
+	//lucide Import
+	import TestTubeDiagonal from '@lucide/svelte/icons/test-tube-diagonal';
+	import ShieldPlus from '@lucide/svelte/icons/shield-plus';
+	import Milestone from '@lucide/svelte/icons/milestone';
+	import Trophy from '@lucide/svelte/icons/trophy';
+	import Rocket from '@lucide/svelte/icons/rocket';
+	import Building from '@lucide/svelte/icons/building';
+	import Mail from '@lucide/svelte/icons/mail';
+	import Factory from '@lucide/svelte/icons/factory';
+	import Lock from '@lucide/svelte/icons/lock';
+	//End of lucide Import----
+	import logo from '$lib/assets/images/Logo.png?enhanced';
+	import { locales, localizeHref, getLocale } from '$lib/paraglide/runtime';
+	import { m } from '$lib/paraglide/messages';
+
 	import type { PageData } from './$types';
 	import { page } from '$app/state';
-	import { m } from '$lib/paraglide/messages';
-	import { locales, localizeHref } from '$lib/paraglide/runtime';
 
 	import Review from '$lib/components/About/Review.svelte';
 	import TimelineCard from '$lib/components/About/TimelineCard.svelte';
@@ -163,7 +163,7 @@
 			<div
 				class="w-full max-w-full flex-shrink self-center px-4 sm:w-9/12 sm:px-12 lg:w-1/2 lg:px-18"
 			>
-				<img src={logo} class="h-auto w-full max-w-full" alt="creative agency" />
+				<enhanced:img src={logo} class="h-auto w-full max-w-full" alt="creative agency" />
 			</div>
 			<!-- end content -->
 
