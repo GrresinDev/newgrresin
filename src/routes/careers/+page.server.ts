@@ -4,7 +4,10 @@ import type { Actions, PageServerLoad } from './$types';
 import { ClientResponseError } from 'pocketbase';
 import { careerSchema } from '$lib/components/Career/schema';
 
-export const load: PageServerLoad = async ({ locals }) => {
+export const load: PageServerLoad = async ({ locals, setHeaders }) => {
+	setHeaders({
+		'Cache-Control': `max-age=0, s-maxage=60`
+	});
 	const pb = locals.pb;
 
 	const position: PositionModel[] = await pb.collection('positions').getFullList({});
@@ -42,7 +45,7 @@ export const actions: Actions = {
 			return fail(400, {
 				success: false,
 				validation: errorResponse,
-				data: rawData 
+				data: rawData
 			});
 		}
 

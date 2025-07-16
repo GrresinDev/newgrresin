@@ -29,7 +29,7 @@
 	}}
 >
 	<div class="grid w-full items-center gap-1.5">
-		<Label for="email">Your Email</Label>
+		<Label for="email">{m.ideal_mushy_bee_slide()}</Label>
 		<Input
 			type="email"
 			id="email"

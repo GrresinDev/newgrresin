@@ -13,6 +13,7 @@
 
 	import type { PageData } from './$types';
 	import Button from '$lib/components/ui/button/button.svelte';
+	import HeroCarousel from '$lib/components/Hero/hero-carousel.svelte';
 
 	let locale = $state(getLocale());
 	let isArabic = $derived(locale == 'ar');
@@ -52,10 +53,7 @@
 
 <section>
 	<div class="relative z-10 max-w-full">
-		{#if data.components['HeroCarousel']}
-			{@const ContactCarousel = data.components['HeroCarousel']}
-			<ContactCarousel />
-		{/if}
+		<HeroCarousel />
 	</div>
 </section>
 <p
