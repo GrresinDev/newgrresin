@@ -32,20 +32,23 @@
 </script>
 
 <main class="min-h-screen p-4 sm:p-8">
+	<!-- Hero Section -->
 	<section class="mb-10 rounded-2xl bg-transparent p-10 text-center shadow-lg">
-		<h1 class="text-primary mb-4 text-4xl font-bold break-words">
+		<h1 class="mb-4 text-4xl font-bold text-[#a71580]">
 			{m.tense_topical_shrike_edit()}
 		</h1>
-		<p class="text-lg break-words text-gray-600">
+		<p class="text-lg text-gray-600">
 			{m.maroon_fine_shell_zoom()}
 		</p>
 	</section>
 
-	<div class="flex items-center justify-center">
+	<!-- Forms Section -->
+	<div class=" flex w-full items-center justify-center md:max-w-md">
+		<!-- Floor Estimation Request Form -->
 		<form
 			method="POST"
 			autocomplete="on"
-			class="w-full max-w-lg shadow-2xl"
+			class="w-full shadow-2xl"
 			use:enhance={() => {
 				loading = true;
 				return ({ update }) => {
@@ -56,10 +59,10 @@
 			}}
 		>
 			<Card.Root class="w-full shadow-2xl">
-				<Card.Content class="space-y-4 p-6 sm:p-8">
-					<h2 class="text-xl font-semibold break-words">{m.patient_major_samuel_list()}</h2>
+				<Card.Content class="space-y-4">
+					<h2 class="text-xl font-semibold">{m.patient_major_samuel_list()}</h2>
 					<div>
-						<Label for="name" class="text-xl break-words">{m.vivid_direct_gopher_belong()}</Label>
+						<Label for="name" class="text-xl ">{m.vivid_direct_gopher_belong()}</Label>
 						<Input
 							id="name"
 							name="name"
@@ -69,24 +72,22 @@
 						/>
 					</div>
 					<div>
-						<Label for="email" class="text-xl break-words">{m.ideal_mushy_bee_slide()}</Label>
+						<Label for="email" class="text-xl ">{m.ideal_mushy_bee_slide()}</Label>
 						<Input id="email" name="email" type="email" placeholder="example@mail.com" required />
 					</div>
 					<div>
-						<Label for="phone" class="text-xl break-words"
-							>{m.swift_elegant_bullock_forgive()}</Label
-						>
+						<Label for="phone" class="text-xl ">{m.swift_elegant_bullock_forgive()}</Label>
 						<Input id="phone" name="phone" type="tel" placeholder="05xxxxxxxx" required />
 					</div>
 					<div>
-						<Label for="city1" class="text-xl break-words">{m.bold_frail_platypus_express()}</Label>
+						<Label for="city1" class="text-xl ">{m.bold_frail_platypus_express()}</Label>
 						<Select.Root type="single" name="city" bind:value={city1} required>
 							<Select.Trigger id="city1">
 								{city1Content}
 							</Select.Trigger>
-							<Select.Content class="bg-white text-black">
+							<Select.Content class=" bg-white text-black">
 								{#each cities as city}
-									<Select.Item value={city} label={city} class="hover:bg-slate-500"
+									<Select.Item value={city} label={city} class=" hover:bg-slate-500 "
 										>{city}</Select.Item
 									>
 								{/each}
@@ -94,32 +95,35 @@
 						</Select.Root>
 					</div>
 					<div>
-						<Label for="place" class="text-xl break-words">{m.lofty_loose_martin_drop()}</Label>
+						<Label for="place" class="text-xl ">{m.lofty_loose_martin_drop()}</Label>
 						<Select.Root type="single" name="place" bind:value={place1} required>
 							<Select.Trigger id="place">
 								{place1Content}
 							</Select.Trigger>
 
-							<Select.Content class="bg-white text-black">
+							<Select.Content class=" bg-white text-black">
 								{#each placeTypes as type}
-									<Select.Item value={type} class="hover:bg-slate-500">{type}</Select.Item>
+									<Select.Item value={type} class=" hover:bg-slate-500 ">{type}</Select.Item>
 								{/each}
 							</Select.Content>
 						</Select.Root>
 					</div>
 
 					<div class="flex items-center space-x-2">
-						<Label for="cracks" class="px-2 text-xl break-words"
-							>{m.cute_knotty_lemur_evoke()}</Label
-						>
-						<Switch id="cracks" name="cracks" />
+						<Label for="cracks" class="px-2 text-xl">{m.cute_knotty_lemur_evoke()}</Label>
+						<Switch id="cracks" name="cracks" required />
 					</div>
-					<Button variant="ghost" class="w-full" type="submit" disabled={loading}>
+					<Button
+						class="w-full bg-[#a71580]  text-lg font-bold text-white"
+						variant="outline"
+						type="submit"
+						disabled={loading}
+					>
 						{#if loading}
-							<LoaderCircle class="mr-2 h-5 w-5 animate-spin" />
+							<LoaderCircle class="animate-spin" />
 						{/if}
-						{m.lazy_tasty_zebra_support()}
-					</Button>
+						{m.lazy_tasty_zebra_support()}</Button
+					>
 				</Card.Content>
 			</Card.Root>
 		</form>
