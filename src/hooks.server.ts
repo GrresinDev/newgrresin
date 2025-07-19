@@ -25,7 +25,7 @@ export const handle: Handle = sequence(handleParaglide, handlePocketBase);
 
 export const handleError: HandleServerError = async ({ error }) => {
 	console.log('From HandleServerError');
-	console.log(typeof error);
+	console.log( error);
 
 	return {
 		message: 'Whoops'
