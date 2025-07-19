@@ -43,7 +43,7 @@
 	</section>
 
 	<!-- Forms Section -->
-	<div class=" flex w-full items-center justify-center md:max-w-md">
+	<div class=" flex w-full items-center justify-center">
 		<!-- Floor Estimation Request Form -->
 		<form
 			method="POST"
