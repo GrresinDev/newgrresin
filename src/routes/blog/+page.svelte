@@ -170,7 +170,7 @@
 										{isArabic ? recentPost.title_ar : recentPost.title}
 									</h4>
 									<p class="mt-1 line-clamp-2 text-sm text-gray-500 rtl:mx-2">
-										{@html getLocale() === 'ar' ? recentPost.small_desc_ar : recentPost.small_desc}
+										{@html getLocale() === 'en' ? recentPost.small_desc : recentPost.small_desc_ar}
 									</p>
 								</div>
 							</a>
