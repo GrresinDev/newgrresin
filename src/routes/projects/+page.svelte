@@ -73,30 +73,6 @@
 		content="See all the amazing  projects by Graffiti Resin across Saudi Arabia. Quality, durability, and stunning design."
 	/>
 	<meta name="twitter:image" content="{page.url.origin}/logo.png" />
-
-	<script type="application/ld+json">
-        {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "CollectionPage",
-            "name": "Graffiti Resin Project Portfolio",
-            "description": "Explore the complete portfolio of {projectTypesString.toLowerCase()} installations by Graffiti Resin across Saudi Arabia. Showcasing a variety of finished projects.",
-            "url": page.url.href,
-            "publisher": {
-                "@type": "Organization",
-                "name": "Graffiti Resin",
-                "url": page.url.origin
-            },
-            "mainEntityOfPage": {
-                "@type": "WebPage",
-                "@id": page.url.href
-            },
-            "about": {
-                "@type": "Thing",
-                "name": "Flooring and Decorative Finishes",
-                "description": "Information about {projectTypesString.toLowerCase()} installations, including various flooring and decorative finishes."
-            }
-        })}
-	</script>
 </svelte:head>
 <main>
 	<section
@@ -121,7 +97,7 @@
 		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
 			<Tabs.Root value={activeTabId} onValueChange={onTabChange} class="mb-8">
 				<Tabs.List
-					class="grid h-auto w-full grid-cols-2 gap-2 rounded-lg bg-transparent p-2 sm:grid-cols-4 "
+					class="grid h-auto w-full grid-cols-2 gap-2 rounded-lg bg-transparent p-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4"
 				>
 					{#each data.projectTypes as projectTypeConfig, i (projectTypeConfig.id)}
 						{@const Icon = getIcon(projectTypeConfig.id, i)}
@@ -146,15 +122,16 @@
 								const selectedProjectType = data.projectTypes.find(
 									(pt: ProjectTypeItem) => pt.id === activeTabId
 								);
-								if (selectedProjectType?.types === 'all') {
+								if (selectedProjectType?.id === 'all') {
 									return resolvedProjects;
 								} else {
 									return resolvedProjects.filter((project) => project.type === activeTabId);
 								}
 							})()}
+
 							{#key activeTabId}
 								<article
-									class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-2 lg:gap-8"
+									class=" mx-auto grid max-w-7xl grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-2 lg:gap-8"
 									in:fade={{ delay: 100, duration: 800, easing: cubicOut }}
 									out:fade={{ duration: 400, easing: cubicOut }}
 								>

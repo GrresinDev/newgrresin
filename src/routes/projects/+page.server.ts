@@ -14,6 +14,11 @@ export const load = (async ({ setHeaders, locals }) => {
 		fields: 'id,types,types_ar'
 	});
 	const itemsOnly: ProjectTypeItem[] = projectTypes.items;
+	itemsOnly.unshift({
+		id: 'all',
+		types: 'all',
+		types_ar: 'الكل'
+	});
 
 	const projectsPromise: Promise<ProjectWithThumbNail[]> = pb
 		.collection('projects')
