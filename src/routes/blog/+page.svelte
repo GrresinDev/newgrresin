@@ -170,7 +170,7 @@
 										{isArabic ? recentPost.title_ar : recentPost.title}
 									</h4>
 									<p class="mt-1 line-clamp-2 text-sm text-gray-500 rtl:mx-2">
-										{@html isArabic ? recentPost.desc_ar : recentPost.desc}
+										{@html getLocale() === 'ar' ? recentPost.small_desc_ar : recentPost.small_desc}
 									</p>
 								</div>
 							</a>
@@ -256,8 +256,9 @@
 								{i + 1} &nbsp; {isArabic ? post.title_ar : post.title}
 							</h4>
 							<p class="mb-2 line-clamp-3 text-lg text-gray-500 rtl:mx-2">
-								{@html isArabic ? post.desc_ar : post.desc}
+								{@html getLocale() === 'ar' ? post.small_desc_ar : post.small_desc}
 							</p>
+
 							<a href={localizeHref(`/blog/${post.slug}`)} class="text-sm text-blue-500"
 								>{m.tired_bad_alpaca_accept()}</a
 							>

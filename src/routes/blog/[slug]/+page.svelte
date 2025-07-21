@@ -82,7 +82,7 @@
 
 <!-- Blog Article -->
 <div class="  conatiner mx-auto max-w-4xl pt-6 pb-12 lg:pt-10">
-	<div class="">
+	<div class="px-8 md:px-2">
 		<!-- Avatar Media -->
 		<div class="mb-6 flex items-center justify-between">
 			<div class="flex w-full gap-x-5 sm:items-center sm:gap-x-3">

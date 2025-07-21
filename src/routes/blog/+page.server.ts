@@ -5,9 +5,11 @@ export const load: PageServerLoad = async ({ locals }) => {
 	const pb = locals.pb;
 	const postsPromise: Promise<PostWithThumbnail[]> = pb
 		.collection('posts')
-		.getFullList<PostModel[]>()
+		.getFullList<PostModel[]>({
+			fields: 'id,collectionId,collectionName,title,title_ar,image,slug,small_desc,small_desc_ar'
+		})
 		.then((posts: PostModel[]) => {
-			const postsWithImageUrls: PostWithThumbNail[] = posts.map((post: PostModel) => ({
+			const postsWithImageUrls: PostWithThumbnail[] = posts.map((post: PostModel) => ({
 				...post,
 				thumbnail: pb.files.getURL(post, post.image)
 			}));
@@ -16,7 +18,10 @@ export const load: PageServerLoad = async ({ locals }) => {
 
 	const recentPostPromise: Promise<PostWithThumbnail> = pb
 		.collection('posts')
-		.getFirstListItem<PostModel>('', { sort: '-created' })
+		.getFirstListItem<PostModel>('', {
+			sort: '-created',
+			fields: 'id,collectionId,collectionName,title,title_ar,image,slug,small_desc,small_desc_ar'
+		})
 		.then((recentPost: PostModel) => {
 			const recentPostWithImageUrls: PostWithThumbnail = {
 				...recentPost,
