@@ -10,6 +10,7 @@
 	import { enhance } from '$app/forms';
 	import type { PageProps } from './$types';
 	import { toast } from 'svelte-sonner';
+	import SeoHeader from '$lib/components/Seo/SeoHeader.svelte';
 
 	let cities = ['Riyadh', 'Jeddah', 'Dammam', 'Mecca', 'Medina'];
 	let placeTypes = ['Home', 'Commercial'];
@@ -30,6 +31,7 @@
 		}
 	});
 </script>
+<SeoHeader pageName="order" />
 
 <main class="min-h-screen p-4 sm:p-8">
 	<!-- Hero Section -->

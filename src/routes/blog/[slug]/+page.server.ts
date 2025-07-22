@@ -1,5 +1,5 @@
-import type { PostModel } from '$lib/components/Blogs/interface';
-import { error } from '@sveltejs/kit';
+import type { PostModel, PostWithThumbnail } from '$lib/components/Blogs/interface';
+
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ params, locals, setHeaders }) => {
@@ -8,17 +8,17 @@ export const load: PageServerLoad = async ({ params, locals, setHeaders }) => {
 	});
 
 	const pb = locals.pb;
-	try {
-		const post: PostModel = await pb.collection('posts').getFirstListItem(`slug="${params.slug}"`);
 
-		const postWithImageUrl = {
-			...post,
-			thumbnail: pb.files.getURL(post, post.image)
-		};
+	const postPromise: Promise<PostWithThumbnail> = pb
+		.collection('posts')
+		.getFirstListItem<PostModel>(`slug="${params.slug}"`)
+		.then((post: PostModel) => {
+			const postWithImageUrl: PostWithThumbnail = {
+				...post,
+				thumbnail: pb.files.getURL(post, post.image)
+			};
+			return postWithImageUrl;
+		});
 
-		return { post: postWithImageUrl };
-		// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	} catch (_) {
-		error(401, 'Project Not Found');
-	}
+	return { post: postPromise };
 };

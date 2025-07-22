@@ -16,6 +16,7 @@
 	import ProjectCard from '$lib/components/Projects/ProjectCard.svelte';
 	import { cubicOut } from 'svelte/easing';
 	import { page } from '$app/state';
+	import SeoHeader from '$lib/components/Seo/SeoHeader.svelte';
 
 	let { data }: { data: PageData } = $props();
 
@@ -49,31 +50,7 @@
 	});
 </script>
 
-<svelte:head>
-	<title>All Projects | Graffiti Resin - Installations in KSA</title>
-	<meta
-		name="description"
-		content="Browse all completed projects by Graffiti Resin across Saudi Arabia. See our quality craftsmanship."
-	/>
-	<link rel="canonical" href={page.url.href} />
-	<meta property="og:title" content="All Projects | Graffiti Resin" />
-	<meta
-		property="og:description"
-		content="Explore our comprehensive portfolio of  installations throughout KSA. High-quality finishes for various applications."
-	/>
-	<meta property="og:url" content={page.url.href} />
-	<meta property="og:type" content="website" />
-	<meta property="og:image" content="{page.url.origin}/logo.png" />
-	<meta property="og:image:alt" content="Graffiti Resin Logo" />
-	<meta name="twitter:image" content="{page.url.origin}/images/project-showcase.jpg" />
-
-	<meta name="twitter:title" content="All Projects | Graffiti Resin" />
-	<meta
-		name="twitter:description"
-		content="See all the amazing  projects by Graffiti Resin across Saudi Arabia. Quality, durability, and stunning design."
-	/>
-	<meta name="twitter:image" content="{page.url.origin}/logo.png" />
-</svelte:head>
+<SeoHeader pageName="projects" />
 <main>
 	<section
 		class="from-background to-card w-full rounded-lg bg-gradient-to-br py-20 shadow-xl md:py-32"

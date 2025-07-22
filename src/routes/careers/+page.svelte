@@ -14,6 +14,7 @@
 	import type { PageData } from './$types';
 	import Button from '$lib/components/ui/button/button.svelte';
 	import HeroCarousel from '$lib/components/Hero/hero-carousel.svelte';
+	import SeoHeader from '$lib/components/Seo/SeoHeader.svelte';
 
 	let locale = $state(getLocale());
 	let isArabic = $derived(locale == 'ar');
@@ -50,7 +51,7 @@
 		}
 	];
 </script>
-
+<SeoHeader pageName="careers" />
 <section>
 	<div class="relative z-10 max-w-full">
 		<HeroCarousel />

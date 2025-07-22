@@ -5,6 +5,7 @@
 	import LoadingArtCard from '$lib/components/ArtProducts/loading-art-card.svelte';
 	import Hero from '$lib/components/Hero/Hero.svelte';
 	import LoadingProjectsProducts from '$lib/components/ProjectsProducts/loading-ProjectsProducts.svelte';
+	import SeoHeader from '$lib/components/Seo/SeoHeader.svelte';
 	//Paraglide Imports
 	import { m } from '$lib/paraglide/messages';
 	import { getLocale } from '$lib/paraglide/runtime';
@@ -17,6 +18,7 @@
 	let { data } = $props();
 </script>
 
+<SeoHeader pageName="home" />
 <Hero />
 
 <section id="graffiti-resin-services" class=" mt-3 flex w-full flex-col px-0 py-10 md:px-4 lg:px-8">

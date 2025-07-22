@@ -20,6 +20,7 @@
 
 	import Review from '$lib/components/About/Review.svelte';
 	import TimelineCard from '$lib/components/About/TimelineCard.svelte';
+	import SeoHeader from '$lib/components/Seo/SeoHeader.svelte';
 
 	let locale = $state(getLocale());
 	let isArabic = $derived(locale == 'ar');
@@ -126,31 +127,7 @@
 	];
 </script>
 
-<svelte:head>
-	<title>About Graffiti Resin | Leaders in Resin Innovation in Saudi Arabia</title>
-	<meta
-		name="description"
-		content="Learn about Graffiti Resin – our story, values, and mission to innovate flooring and artistic resin solutions with epoxy terrazzo, cement terrazzo, and creative products."
-	/>
-
-	<meta
-		property="og:title"
-		content="Meet Graffiti Resin: Saudi Arabia’s Resin Flooring & Art Experts"
-	/>
-	<meta
-		property="og:description"
-		content="With a vision rooted in quality and design, Graffiti Resin pioneers artistic and functional resin surfaces across the region."
-	/>
-	<meta property="og:type" content="website" />
-	<meta property="og:url" content={localizeHref('about')} />
-	<!--<meta property="og:image" content="" />
--->
-	<meta
-		name="keywords"
-		content="about Graffiti Resin, Saudi epoxy company, resin floor specialists, cement terrazzo team, resin design experts, resin flooring history"
-	/>
-</svelte:head>
-
+<SeoHeader pageName="about" />
 <div style="display:none">
 	{#each locales as locale}
 		<a href={localizeHref('/about', { locale })}>{locale}</a>

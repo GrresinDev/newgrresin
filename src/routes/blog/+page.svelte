@@ -10,6 +10,7 @@
 	import Instagram from '@lucide/svelte/icons/instagram';
 	import Facebook from '@lucide/svelte/icons/facebook';
 	import { LoaderCircle } from '@lucide/svelte';
+	import SeoHeader from '$lib/components/Seo/SeoHeader.svelte';
 
 	let { data, form }: PageProps = $props();
 	const myBreadcrumbs = [
@@ -51,44 +52,7 @@
 	);
 </script>
 
-<!--
-<svelte:head>
-	
-	<title>{m.company_name()} Blogs | Resin Tips & Projects in Saudi Arabia</title>
-	<meta name="title" content="{m.company_name()} Blogs | Resin Tips & Projects in Saudi Arabia" />
-	<meta
-		name="description"
-		content="Explore resin art tutorials, epoxy tips, and DIY projects from {m.company_name()}, a leading resin products company based in Saudi Arabia."
-	/>
-
-	
-	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://grresin.com/blogs" />
-	<meta
-		property="og:title"
-		content="{m.company_name()} Blogs | Resin Tips & Projects in Saudi Arabia"
-	/>
-	<meta
-		property="og:description"
-		content="Explore resin art tutorials, epoxy tips, and DIY projects from {m.company_name()}, a leading resin products company based in Saudi Arabia."
-	/>
-	<meta property="og:image" content={logo} />
-
-	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:url" content="https://grresin.com/blogs" />
-	<meta
-		name="twitter:title"
-		content="{m.company_name()} Blogs | Resin Tips & Projects in Saudi Arabia"
-	/>
-	<meta
-		name="twitter:description"
-		content="Explore resin art tutorials, epoxy tips, and DIY projects from {m.company_name()}, a leading resin products company based in Saudi Arabia."
-	/>
-	<meta name="twitter:image" content="https://grresin.com/og-cover.jpg" />
-
-	
-	<link rel="canonical" href="https://grresin.com/blogs" />
-</svelte:head>-->
+<SeoHeader pageName="blog" />
 {#snippet xLogo()}
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
