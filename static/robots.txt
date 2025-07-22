@@ -1,0 +1,6 @@
+# robots.txt for Graffiti Resin
+
+User-agent: *
+Allow: /
+
+Sitemap: https://newgrresin.vercel.app/sitemap.xml
