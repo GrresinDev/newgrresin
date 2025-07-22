@@ -25,5 +25,5 @@
 	<meta name="twitter:card" content="Graffiti Resin Logo" />
 	<meta name="twitter:title" content={currentSeoData.title} />
 	<meta name="twitter:description" content={currentSeoData.description} />
-	<meta name="twitter:image" content={currentSeoData.image} />
+	<meta name="twitter:image" content={page.url.host + currentSeoData.image}/>
 </svelte:head>
