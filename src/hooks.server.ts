@@ -11,7 +11,7 @@ const handleParaglide: Handle = ({ event, resolve }) =>
 		return resolve(event, {
 			transformPageChunk: ({ html }) => {
 				const dir = locale === 'ar' ? 'rtl' : 'ltr';
-				return html.replace('%lang%', locale).replace('%dir%', dir);
+				return html.replace('%paraglide.lang%', locale).replace('%dir%', dir);
 			}
 		});
 	});
@@ -25,7 +25,7 @@ export const handle: Handle = sequence(handleParaglide, handlePocketBase);
 
 export const handleError: HandleServerError = async ({ error }) => {
 	console.log('From HandleServerError');
-	console.log( error);
+	console.log(error);
 
 	return {
 		message: 'Whoops'
