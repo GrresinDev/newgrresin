@@ -1,21 +1,9 @@
 <script lang="ts">
-	import { page } from '$app/state';
 	import type { PageData } from './$types';
-
 	let { data }: { data: PageData } = $props();
 </script>
 
-<svelte:head>
-  <title>Graffiti Resin Flooring Services | Epoxy & Terrazzo in Saudi Arabia</title>
-  <meta name="description" content="Discover Graffiti Resin's professional services in resin flooring: epoxy terrazzo, cement terrazzo, polyurethane coatings, and decorative finishes for commercial and residential spaces." />
 
-  <meta property="og:title" content="Resin Flooring Solutions by Graffiti Resin" />
-  <meta property="og:description" content="Graffiti Resin offers premium epoxy and cement terrazzo flooring services across Saudi Arabia. Ideal for homes, offices, malls, and showrooms." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content={page.url.href} />
-
-  <meta name="keywords" content="resin flooring Saudi Arabia, epoxy flooring, terrazzo services, cement terrazzo contractor, commercial flooring, resin solutions, Graffiti Resin services" />
-</svelte:head>
 <div class="container mx-auto p-4 sm:p-6 md:p-8">
 	<!-- Header -->
 	<header class="mb-8 md:mb-12">

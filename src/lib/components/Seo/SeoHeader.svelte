@@ -18,12 +18,15 @@
 	<meta name="keywords" content={currentSeoData.keywords} />
 	<meta property="og:title" content={currentSeoData.title} />
 	<meta property="og:description" content={currentSeoData.description} />
-	<meta property="og:image" content={page.url.host + currentSeoData.image} />
+	{#if pageName !== 'about'}
+		<meta property="og:image" content={page.url.origin + currentSeoData.image} />
+
+		<meta name="twitter:image" content={page.url.host + currentSeoData.image} />
+	{/if}
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content={page.url.href} />
 	<link rel="canonical" href={page.url.href} />
 	<meta name="twitter:card" content="Graffiti Resin Logo" />
 	<meta name="twitter:title" content={currentSeoData.title} />
 	<meta name="twitter:description" content={currentSeoData.description} />
-	<meta name="twitter:image" content={page.url.host + currentSeoData.image}/>
 </svelte:head>

@@ -23,7 +23,7 @@ export const seo: Record<'ar' | 'en', SeoConfig> = {
 			title: 'About Us | Graffiti Resin – Resin & Flooring Experts in KSA',
 			description:
 				"Learn about Graffiti Resin's mission, vision, and experience in producing high-quality resin products and delivering art and flooring projects in Saudi Arabia.",
-			image: 'og/logo.png',
+			image: '/og/logo.png',
 			keywords:
 				'About Graffiti Resin, resin company Saudi Arabia, flooring company KSA, resin manufacturer, epoxy experts, Saudi art flooring'
 		},
@@ -76,7 +76,7 @@ export const seo: Record<'ar' | 'en', SeoConfig> = {
 			title: 'جرافيتي ريزن | حلول فنية و ريزن وأرضيات في السعودية',
 			description:
 				'تختص جرافيتي ريزن في منتجات ريزن عالية الجودة، السيليكون الفني، وحلول الأرضيات المخصصة في جميع أنحاء السعودية.',
-			image: 'og/home.png',
+			image: 'og/logo.png',
 
 			keywords:
 				'جرافيتي ريزن, فن ريزن, أرضيات راتنجية, إيبوكسي, مطاط سيليكون, مصنع راتنج السعودية, مستلزمات فنية السعودية, أرضيات مخصصة'
@@ -85,7 +85,7 @@ export const seo: Record<'ar' | 'en', SeoConfig> = {
 			title: 'من نحن | جرافيتي ريزن – خبراء ريزن والأرضيات في السعودية',
 			description:
 				'تعرف على مهمة ورؤية وخبرة جرافيتي ريزن في إنتاج ريزن عالي الجودة وتنفيذ المشاريع الفنية وحلول الأرضيات.',
-			image: 'og/about.png',
+			image: '/og/logo.png',
 
 			keywords:
 				'من نحن جرافيتي ريزن, شركة راتنج السعودية, شركة أرضيات السعودية, مصنع إيبوكسي, خبراء ريزن, فن الأرضيات السعودي'
@@ -94,7 +94,7 @@ export const seo: Record<'ar' | 'en', SeoConfig> = {
 			title: 'المشاريع | جرافيتي ريزن – تطبيقات مبتكرة للراتنج والأرضيات',
 			description:
 				'استكشف مشاريع جرافيتي ريزن المذهلة التي تشمل تطبيقات فنية وأرضيات احترافية باستخدام ريزن في جميع أنحاء السعودية.',
-			image: 'og/projects.png',
+			image: 'og/logo.png',
 
 			keywords:
 				'مشاريع جرافيتي ريزن, أرضيات راتنجية, تطبيقات فنية راتنجية, محفظة مشاريع السعودية, أمثلة أرضيات إيبوكسي'
@@ -103,7 +103,7 @@ export const seo: Record<'ar' | 'en', SeoConfig> = {
 			title: 'المدونة | نصائح ريزن واتجاهات الأرضيات وإلهام فني',
 			description:
 				'ابقَ مطلعًا على أحدث تقنيات ريزن، واتجاهات الأرضيات، والتطبيقات الفنية المبتكرة من خلال مدونة جرافيتي ريزن.',
-			image: 'og/blog.png',
+			image: 'og/logo.png',
 
 			keywords:
 				'مدونة ريزن, نصائح الأرضيات, دروس ريزن, أدلة إيبوكسي, نصائح فنية, مدونة جرافيتي ريزن, قاعدة معرفة ريزن'
